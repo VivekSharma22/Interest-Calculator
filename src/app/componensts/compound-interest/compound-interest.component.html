@@ -1,0 +1,50 @@
+<div class="page-wrapper">
+  <p>Calculate Compound interest </p>
+  <div class="input-form">
+    <form [formGroup]="interestForm" class="row g-3 needs-validation" novalidate>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Principal Amount</span>
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" formControlName="principal" required
+          [class.is-invalid]="interestForm.get('principal')?.invalid && interestForm.get('principal')?.dirty">
+        <div class="invalid-feedback">
+          Principal Amount should be between 0 and 100.
+        </div>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Rate of Interest</span>
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" formControlName="rate" required
+          [class.is-invalid]="interestForm.get('rate')?.invalid && interestForm.get('rate')?.dirty">
+        <span class="input-group-text" id="inputGroup-sizing-default">%</span>
+        <div class="invalid-feedback">
+          Rate of Interest should be between 0 and 100.
+        </div>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Time</span>
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" formControlName="time" required
+          [class.is-invalid]="interestForm.get('time')?.invalid && interestForm.get('time')?.dirty">
+        <span class="input-group-text" id="inputGroup-sizing-default">years</span>
+        <div class="invalid-feedback">
+          Time should should greater than or equal to 0.
+        </div>
+      </div>
+    </form>
+    <div class="button-row">
+      <button type="button" class="btn btn-primary" (click)="onCalculate()"
+        [disabled]="interestForm.invalid">Calculate</button>
+      <button type="button" class="btn btn-secondary" (click)="onReset()">Reset</button>
+    </div>
+    <div class="results" *ngIf="result != null">
+      <p>
+        <span>Result = {{result}}</span>
+        <span>Principal Amount = {{ principal}}</span>
+        <span>Rate of Interest (%) = {{ rate }}</span>
+        <span>Time (years) = {{ time}}</span>
+      </p>
+    </div>
+
+  </div>
+</div>
