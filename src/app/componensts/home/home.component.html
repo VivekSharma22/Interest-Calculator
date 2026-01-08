@@ -1,2 +1,8 @@
 <app-navbar></app-navbar>
-<app-simple-interest></app-simple-interest>
+<div class="home-body" *ngIf="!outlet.isActivated">
+<h2>Interest Calculator</h2>
+<p>
+Calculate Simple and Compound Interest easily using this Angular application.
+</p>
+</div>
+<router-outlet #outlet="outlet"></router-outlet>
