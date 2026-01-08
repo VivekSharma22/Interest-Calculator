@@ -1,5 +1,5 @@
 <div class="page-wrapper">
-  <p>Calculate simple interest </p>
+  <p>Calculate Simple Interest </p>
   <div class="input-form">
     <form [formGroup]="interestForm" class="row g-3 needs-validation" novalidate>
     <div class="input-group mb-3">
@@ -8,7 +8,7 @@
         aria-describedby="inputGroup-sizing-default" formControlName="principal" required
         [class.is-invalid]="interestForm.get('principal')?.invalid && interestForm.get('principal')?.dirty">
         <div class="invalid-feedback">
-          Principal Amount should be between 0 and 100.
+          Principal Amount should be greater then 0.
         </div>
     </div>
     <div class="input-group mb-3">

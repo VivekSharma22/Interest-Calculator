@@ -1,8 +1,10 @@
+<div class="page-wrapper" [ngClass]="currentBackground">
 <app-navbar></app-navbar>
-<div class="home-body" *ngIf="!outlet.isActivated">
+<div class="home-body" *ngIf="showHomeContent()">
 <h2>Interest Calculator</h2>
 <p>
 Calculate Simple and Compound Interest easily using this Angular application.
 </p>
 </div>
-<router-outlet #outlet="outlet"></router-outlet>
+<router-outlet ></router-outlet>
+</div>
